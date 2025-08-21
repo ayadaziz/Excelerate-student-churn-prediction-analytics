@@ -65,7 +65,7 @@ kable(findings, caption = "Key Project Findings") %>%
 
 ---
 
-# Project Journey {.tabset}
+# Project Journey
 
 ## Week 1: Data Preparation
 
@@ -173,7 +173,7 @@ kable(models, caption = "Model Performance Metrics") %>%
 
 ---
 
-# Technical Implementation {.tabset}
+# Technical Implementation
 
 ## Code Repository
 
@@ -261,7 +261,7 @@ kable(evaluation, caption = "Model Evaluation Framework") %>%
 
 ---
 
-# Business Impact & Recommendations {.tabset}
+# Business Impact & Recommendations
 
 ## Quantified Impact
 
