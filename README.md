@@ -3,24 +3,6 @@
 A comprehensive data science project analyzing student engagement patterns and predicting churn risk using machine learning models. This repository contains the complete analysis from an AI-Powered Data Insights Virtual Internship with Excelerate.
 
 
----
-title: "AI-Powered Student Churn Prediction & Analytics"
-subtitle: "Driving Insights Through Data - Final Internship Report"
-author: "Ayad Aziz & Team 2"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    toc: true
-    toc_float: true
-    theme: flatly
-    highlight: tango
-    code_folding: hide
-  pdf_document:
-    toc: true
-    number_sections: true
----
-
-
 # Executive Summary
 
 ## Overview
