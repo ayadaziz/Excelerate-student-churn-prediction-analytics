@@ -181,34 +181,51 @@ def preprocess_data(df):
     return df
 ```
 
+
 ## Model Architecture
 
 ### Feature Engineering Process
 
-```r
-# Feature Engineering in R (Example)
-create_features <- function(data) {
-  data %>%
-    mutate(
-      age = as.numeric(difftime(Sys.Date(), date_of_birth, units = "days")) / 365.25,
-      signup_to_apply_days = as.numeric(difftime(apply_date, signup_datetime, units = "days")),
-      opportunity_duration = as.numeric(difftime(end_date, start_date, units = "days")),
-      season = case_when(
-        month(signup_datetime) %in% c(12, 1, 2) ~ "Winter",
-        month(signup_datetime) %in% c(3, 4, 5) ~ "Spring", 
-        month(signup_datetime) %in% c(6, 7, 8) ~ "Summer",
-        month(signup_datetime) %in% c(9, 10, 11) ~ "Fall"
-      ),
-      age_group = case_when(
-        age < 18 ~ "Under 18",
-        age <= 25 ~ "18-25",
-        age <= 35 ~ "26-35", 
-        age <= 50 ~ "36-50",
-        TRUE ~ "50+"
-      )
-    )
-}
+**Feature engineering was performed using Excel formulas** to transform raw data into meaningful predictive variables. Key examples include:
+
+#### Age Calculation
+```excel
+=DATEDIF(G4, A4, "Y")
 ```
+*Where Column A = signup date, Column G = birth date*
+
+#### Opportunity Duration
+```excel
+=DAYS(E4,P4)
+```
+*Where Column E = opportunity end date, Column P = opportunity start date*
+
+#### Engagement Score (Composite Metric)
+```excel
+=IF(S2 <> "N/A", (S2 * 0.3 + R2 * 0.4 + Q2 * 0.3), (Q2*0.4 + R2*0.4))
+```
+*Weighted combination of days to start, duration, and age*
+
+#### Days from Signup to Application
+```excel
+=DAYS(O10, A10)
+```
+*Where Column O = application date, Column A = signup date*
+
+#### Fast Applicant Flag
+```excel
+=IF(AND(Z2 >= 0, Z2 <= 3), TRUE, FALSE)
+```
+*Where Z2 = days from signup to application*
+
+#### Application Season Classification
+```excel
+=IF(AND(MONTH(O2) >= 6, MONTH(O2) <= 8), "Summer", 
+   IF(AND(MONTH(O2) >= 9, MONTH(O2) <= 11), "Fall", 
+      IF(OR(MONTH(O2) = 12, MONTH(O2) <= 2), "Winter", "Spring")))
+```
+
+This Excel-based approach allowed for **rapid prototyping** and **easy validation** of feature logic before implementing in the machine learning pipeline.
 
 ### Model Evaluation Framework
 
