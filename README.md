@@ -20,24 +20,8 @@ output:
     number_sections: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo = TRUE,
-  warning = FALSE,
-  message = FALSE,
-  fig.width = 10,
-  fig.height = 6
-)
 
-# Load required libraries
-library(knitr)
-library(kableExtra)
-library(ggplot2)
-library(dplyr)
-library(plotly)
-```
-
-# Executive Summary {.tabset}
+# Executive Summary
 
 ## Overview
 
