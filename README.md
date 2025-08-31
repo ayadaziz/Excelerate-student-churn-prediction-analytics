@@ -70,9 +70,9 @@ kable(features, caption = "Engineered Features") %>%
 
 ## Week 2: Exploratory Data Analysis
 
-### Visualization Strategy
+### Visualisation Strategy
 - **Tools Used**: Seaborn, Matplotlib, Python pandas
-- **Team Approach**: Divided visualization tasks among team members
+- **Team Approach**: Divided visualisation tasks among team members
 - **Graph Types**: Box plots, count plots, correlation heatmaps, pairplots
 
 ### Key Patterns Discovered
@@ -83,11 +83,11 @@ kable(features, caption = "Engineered Features") %>%
 - **Hypothesis**: Reduced outdoor activities drive winter applications
 
 #### Demographic Insights  
-- **Age Distribution**: 18-25 age group dominates participation
+- **Age Distribution**: The 18-25 age group dominates participation
 - **Geographic Concentration**: US, India, Nigeria lead in learner count
 - **Commitment Patterns**: Younger learners show longer completion times
 
-## Week 3: Churn Analysis & Predictive Modeling
+## Week 3: Churn Analysis & Predictive Modelling
 
 ### Churn Definition
 Implemented **hybrid churn identification**:
@@ -169,7 +169,7 @@ def preprocess_data(df):
             return dt_str
         date_part, time_part = dt_str.split(' 24:')
         new_time = '00:' + time_part
-        # Convert to next day
+        # Convert to the next day
         return pd.to_datetime(date_part) + pd.Timedelta(days=1)
     
     # Apply preprocessing steps
@@ -225,14 +225,14 @@ def preprocess_data(df):
       IF(OR(MONTH(O2) = 12, MONTH(O2) <= 2), "Winter", "Spring")))
 ```
 
-This Excel-based approach allowed for **rapid prototyping** and **easy validation** of feature logic before implementing in the machine learning pipeline.
+This Excel-based approach allowed for **rapid prototyping** and **easy validation** of feature logic before implementing it in the machine learning pipeline.
 
 ### Model Evaluation Framework
 
 ```{r model-evaluation, echo=FALSE}
 evaluation <- data.frame(
   Metric = c("Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC", "Confusion Matrix"),
-  Purpose = c("Overall correctness", "Minimize false positives", "Catch all churners", 
+  Purpose = c("Overall correctness", "Minimise false positives", "Catch all churners", 
               "Balance precision/recall", "Ranking quality", "Detailed breakdown"),
   Business_Impact = c("Model reliability", "Resource allocation", "Risk identification",
                       "Balanced performance", "Priority scoring", "Intervention targeting")
@@ -291,9 +291,9 @@ rec_system <- data.frame(
   Component = c("Content-Based Filtering", "Collaborative Filtering", "Hybrid Integration"),
   Method = c("Academic background + engagement history", "User similarity patterns", 
              "Weighted combination"),
-  Benefits = c("Personalized matching", "Discovery of new opportunities", 
+  Benefits = c("Personalised matching", "Discovery of new opportunities", 
                "Balanced recommendations"),
-  Implementation = c("Profile-based algorithms", "Matrix factorization", 
+  Implementation = c("Profile-based algorithms", "Matrix factorisation", 
                      "Ensemble weighting")
 )
 
@@ -307,10 +307,10 @@ kable(rec_system, caption = "Recommendation System Architecture") %>%
 
 ## Project Management Approach
 
-As **team lead** for this 4-person data science team, I coordinated:
+As **team lead** for this 5-person data science team, I coordinated:
 
 ### Team Structure & Responsibilities
-- **Ayad Aziz** (Lead): Overall strategy, modeling, and reporting
+- **Ayad Aziz** (Lead): Overall strategy, modelling, and reporting
 - **Jatin Chotoo**: Data preprocessing and feature engineering  
 - **Jacob Cronce**: Advanced visualizations and feature analysis
 - **Maryam Fatima**: Comprehensive EDA and pattern identification
@@ -338,7 +338,7 @@ This project successfully transformed a **70% churn crisis** into a **data-drive
 ## Future Enhancement Opportunities
 
 1. **Real-time Processing**: Stream processing for immediate risk detection
-2. **Advanced NLP**: Analyze feedback text for sentiment-based churn prediction  
+2. **Advanced NLP**: Analyse feedback text for sentiment-based churn prediction  
 3. **A/B Testing Framework**: Systematic intervention strategy optimization
 4. **Mobile Analytics**: App engagement patterns for enhanced prediction
 5. **External Data Integration**: Economic indicators, seasonal trends
